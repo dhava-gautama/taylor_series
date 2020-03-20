@@ -4,7 +4,7 @@
 # Dhava Gautama
 # Thanks to Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
 # https://github.com/dhava-stmkg/taylor_series
-# Versi 0.1
+# Versi 0.1.1
 
 import numpy as np
 import sympy as sy
@@ -21,7 +21,7 @@ x = sy.Symbol('x')
 f = sin(x)
 
 # Taylor approximation at x0 of the function f(x)
-def taylor(fungsi, x0, n):
+def taylor(fungsi, x0, n,nilai_x):
     i = 0
     p = 0
     while i <= n:
@@ -29,9 +29,8 @@ def taylor(fungsi, x0, n):
         # subs(x,x0) => Subs the value of x with x0
         p = p + (fungsi.diff(x,i).subs(x,x0))/(factorial(i))*(x-x0)**i
         i += 1
-    return p
+    hasil_pendekatan = np.float(p.subs(x,nilai_x))
+    return hasil_pendekatan
 
 # Dekati sin(x) ketika x0=0, dan x=1 pada iterasi ke n=10
-taylor_series = taylor(f, 0, 10)
-app_value = np.float(taylor_series.subs(x,1))
-print(app_value)
+taylor(f, 1, 10, 1)
