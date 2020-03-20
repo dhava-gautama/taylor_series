@@ -1,5 +1,5 @@
-# taylor_series
+# Taylor Series
 ## Require : 
-> [Python 3.x](https://www.python.org/downloads/)
-> [numpy](https://numpy.org/)
-> [sympy](https://www.sympy.org/)
+* [Python 3.x](https://www.python.org/downloads/) 
+* [numpy](https://numpy.org/)
+* [sympy](https://www.sympy.org/)
