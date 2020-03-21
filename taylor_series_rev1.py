@@ -4,7 +4,7 @@
 # Dhava Gautama
 # Thanks to Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
 # https://github.com/dhava-stmkg/taylor_series
-# Versi 0.1.1
+# Versi 0.1.2
 
 import numpy as np
 import sympy as sy
