@@ -30,7 +30,13 @@ def taylor(fungsi, x0, n,nilai_x):
         p = p + (fungsi.diff(x,i).subs(x,x0))/(factorial(i))*(x-x0)**i
         i += 1
     hasil_pendekatan = np.float(p.subs(x,nilai_x))
-    return hasil_pendekatan
+    true_value = np.float(fungsi.subs(x,nilai_x))
+    true_error = np.float(hasil_pendekatan-true_value)
+    relative_true_error = np.float(true_error/true_value*100)
+    return [hasil_pendekatan,true_value,true_error,relative_true_error]
 
 # Dekati sin(x) ketika x0=0, dan x=1 pada iterasi ke n=10
-taylor(f, 1, 10, 1)
+gas = taylor(f, 0, 10, 1)
+print('Nilai Pendekatan =',gas[0])
+print('Nilai True Error =',gas[2])
+print('Nilai Relative True Error =',gas[3],'%')
