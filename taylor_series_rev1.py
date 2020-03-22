@@ -35,7 +35,7 @@ def taylor(fungsi, x0, n,nilai_x):
     relative_true_error = np.float(true_error/true_value*100)
     return [hasil_pendekatan,true_value,true_error,relative_true_error]
 
-# Dekati sin(x) ketika x0=0, dan x=1 pada iterasi ke n=10
+# Dekati sin(x) ketika x0=0, dan x=1 pada iterasi ke n=10 masukan ke kamar gas
 gas = taylor(f, 0, 10, 1)
 print('Nilai Pendekatan =',gas[0])
 print('Nilai True Value =',gas[1])
