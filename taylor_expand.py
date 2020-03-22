@@ -13,14 +13,14 @@ x = sy.Symbol('x')
 f = sin(x)
 
 # Fungsi untuk mengekspansi deret taylor
-def taylor(fungsi, x0, n):
+def taylor(fungsi, a, n):
     i = 0
     p = 0
     turunan = []
     while i <= n:
         # fungsi.diff(x,i) => Calculate i-th order derivative of the function on x
         # subs(x,x0) => Subs the value of x with x0
-        p = p + (fungsi.diff(x,i).subs(x,x0))/(factorial(i))*(x-x0)**i
+        p = p + (fungsi.diff(x,i).subs(x,a))/(factorial(i))*(x-x0)**i
         turunan.append(fungsi.diff(x,i))
         print('Turunan ke-'+str(i),'=',turunan[i])
         i += 1
