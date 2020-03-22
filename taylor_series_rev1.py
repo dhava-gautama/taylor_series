@@ -2,7 +2,7 @@
 # This program will give you the taylor expansion series
 # and it's corresponding value to the N-th terms
 # Dhava Gautama
-# Thanks to Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
+# Thanks to Allah, My Parents, Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
 # https://github.com/dhava-stmkg/taylor_series
 # Versi 0.1.2
 
