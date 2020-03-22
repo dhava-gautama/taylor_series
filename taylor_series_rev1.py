@@ -38,5 +38,6 @@ def taylor(fungsi, x0, n,nilai_x):
 # Dekati sin(x) ketika x0=0, dan x=1 pada iterasi ke n=10
 gas = taylor(f, 0, 10, 1)
 print('Nilai Pendekatan =',gas[0])
+print('Nilai True Value =',gas[1])
 print('Nilai True Error =',gas[2])
 print('Nilai Relative True Error =',gas[3],'%')
