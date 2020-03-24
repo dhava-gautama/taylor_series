@@ -4,16 +4,12 @@
 # Dhava Gautama
 # Thanks to Allah, My Parents, Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
 # https://github.com/dhava-stmkg/taylor_series
-# Versi 0.1.3
+# Versi 0.1.4
 
 import numpy as np
 import sympy as sy
 from sympy.functions import sin, exp, ln
-from numpy import math
-
-# Factorial function
-def factorial(n):
-    return math.factorial(n)
+from math import factorial
 
 # Define x as symbol using sympy lib
 x = sy.Symbol('x')
