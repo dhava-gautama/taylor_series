@@ -1,6 +1,6 @@
 # Taylor Series
-# This program will give you the taylor expansion series
-# and it's corresponding value to the N-th terms
+# This program will give you the taylor expansion series and it's corresponding value to the N-th terms
+# It also give you truncation error, true error, relative true error, approximate error, and relative approximate error
 # Dhava Gautama
 # Thanks to Allah, My Parets, Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
 # https://github.com/dhava-stmkg/taylor_series
@@ -98,8 +98,10 @@ def menu():
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;       TAYLOR SERIES       ;
         ;---------------------------;
-        ; Author : Kang-dhava       ;
-        ; Contact : t.me/dhavakun   ;
+        ;        Kelompok 1         ;
+        ;        Afif Hawari        ;
+        ;       Dhava Gautama       ;
+        ;      Robert Alexander     ;
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         1. Taylor expansion for an f(x) function
         2. Approach the value of f(x) with certain true error limit
@@ -116,6 +118,9 @@ def menu():
             - Trigonometri
                 - Untuk fungsi trigonometri ditulis : sin(x), cos(x), etc
                 - Untuk invers beri huruf a pada depan fungsi, cnh : asin(x), acos(x), etc
+        
+        Note
+        - Nilai approximate error diambil dari selisih nilai deret taylor pada n dan n-1, bila selisihnya 0 maka akan diambil selisih deret taylor pada n dan n-2 dan seterusnya
         
         '''
     )
