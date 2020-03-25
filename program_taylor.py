@@ -4,7 +4,7 @@
 # Dhava Gautama
 # Thanks to Allah, My Parets, Bu Fitri, StackOverflow, GeeksforGeeks, SciPy Docs, JournalDev, Programiz
 # https://github.com/dhava-stmkg/taylor_series
-# Versi 1.2
+# Versi 1.3
 
 import numpy as np # Mengimport modul numpy.
 import sympy as sy # Mengimport modul sympy.
@@ -32,19 +32,27 @@ def taylor(fungsi, x0, n,nilai_x):
 
 
 # error_approach function
-def error_approach(f, x0,nilai_x, acc_err, max_iter):
-    for n in range(1,max_iter+1):
-        func = taylor(f, x0, n, nilai_x) # Menghitung nilai deret taylor iterasi ke-n
-        app_value = np.float(func[0].subs(x,nilai_x)) # Calculate the approx. value
-        t_value = np.float(f.subs(x,nilai_x)) # Calculate the true value
+def error_approach(f, x0,nilai_x, acc_err, n):
+    i = 0 # Inisiasi nilai i = 0
+    p = 0 # Inisiasi nilai p = 0
+    t_value = np.float(f.subs(x,nilai_x))
+    t_error = 1
+    while i <= n:
+        # f.diff(x,i) => Calculate i-th order derivative of the function on x
+        # subs(x,x0) => Subs the value of x with x0
+        p = p + (f.diff(x,i).subs(x,x0))/(factorial(i))*(x-x0)**i # Looping fungsi sigma deret taylor
+        app_value = p.subs(x,nilai_x)
         t_error = abs(t_value - app_value) # Calculate the true error
-        t_r_error = abs((t_error/t_value)*100) # Calculate the relative true error
+        i += 1
         if t_error <= acc_err: #bila nilai true error sudah kurang dari nilai error yang dapat diterima
-            print('Nilai fungsi',f.subs(x,nilai_x),'dengan true error kurang dari',acc_err,'ditemukan setelah',n,'iterasi. Nilai true error =',t_error)
-            print('Nilai pendekatan fungsi',f.subs(x,nilai_x),'=',app_value)
+            print('Nilai pendekatan fungsi',f,'pada x =',nilai_x,'dengan true error kurang dari',acc_err,'ditemukan setelah',i,'iterasi. Nilai true error =',t_error)
+            print('Nilai pendekatan fungsi',f.subs(x,nilai_x),'=',np.float(app_value))
+            break
             return None
-    print('Melebihi maksimum iterasi.')
-    return None
+        if i >= n:
+            print('Melebihi maksimum iterasi.')
+    return None        
+
 
 # Taylor expansion
 def pendekatan():
@@ -98,10 +106,8 @@ def menu():
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;       TAYLOR SERIES       ;
         ;---------------------------;
-        ;        Kelompok 1         ;
-        ;        Afif Hawari        ;
-        ;       Dhava Gautama       ;
-        ;      Robert Alexander     ;
+        ; Author : Kang-dhava       ;
+        ; Contact : t.me/dhavakun   ;
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         1. Taylor expansion for an f(x) function
         2. Approach the value of f(x) with certain true error limit
